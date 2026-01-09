@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 Сортировщик-упаковщик - Игра</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <!-- Шапка игры -->
+    <div class="game-header">
+        <div class="player-info">
+            <span id="company-name">Компания</span> | 
+            <span id="player-name">Игрок</span>
+        </div>
+        
+        <div class="level-info">
+            Уровень <span id="current-level">1</span> | 
+            Смена: <span id="current-shift">1</span> (<span id="shift-name">Ночь</span>)
+        </div>
+        
+        <div class="score-display">
+            Очки: <span id="score">0</span> / <span id="plan-score">30</span>
+        </div>
+        
+        <div class="timer">
+            ⏱️ <span id="time-left">120</span>с
+        </div>
+    </div>
+    
+    <!-- Основное игровое поле -->
+    <div class="game-container">
+        <!-- Левая часть - конвейер -->
+        <div class="conveyor-section">
+            <div class="conveyor">
+                <!-- Конвейерная лента -->
+                <div class="conveyor-belt"></div>
+                <!-- Текущий предмет будет создаваться здесь через JS -->
+                <div id="current-item-container"></div>
+            </div>
+            
+            <!-- Текст вопроса -->
+            <div class="question-panel panel" style="margin-top: 20px; text-align: center;">
+                <h3 id="question-text">Куда отправить этот товар?</h3>
+                <p id="item-description">Выберите правильный ящик</p>
+            </div>
+        </div>
+        
+        <!-- Правая часть - ящики -->
+        <div class="boxes-section">
+            <div class="boxes-container" id="boxes-container">
+                <!-- Ящики будут создаваться здесь через JS -->
+            </div>
+            <!-- Подсказки по управлению -->
+            <div class="hints">
+                <h3>💡 Управление:</h3>
+                <ul>
+                    <li><strong>Клик ЛКМ</strong> по ящику → поместить товар</li>
+                    <li><strong>Цифры 1-5</strong> на клавиатуре → сдать полный ящик</li>
+                    <li><i>На 2 уровне:</i> <strong>клик ПКМ</strong> по коробке чтобы открыть ее</li>
+                    <li><i>На 3 уровне:</i> <strong>наводите мышь</strong> на предметы для определения "экспресс" товаров, которые складываются отдельно</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Кнопка досрочной остановки смены -->
+    <button class="shift-end" id="shift-end">☑️ Закончить смену</button>
+    
+    <!-- Подключаем все необходимые JS файлы -->
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/game-data.js"></script>
+    <script src="js/game-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 Сортировщик-упаковщик - Заставка</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Сортировщик-упаковщик</h1>
+        <p class="subtitle">Ваша задача - сортировать и складывать предметы по их признаку!</p>
+        
+        <div id="start-form">
+            <div class="form-group">
+                <label for="player-name">Ваше имя:</label>
+                <input type="text" id="player-name" placeholder="Введите имя" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Выберите компанию:</label>
+                <select id="company">
+                    <!-- Опции будут добавлены через JS -->
+                </select>
+            </div>
+            
+            <button type="button" id="start" class="btn">🚀 Начать работу!</button>
+        </div>
+        
+        <div class="instructions">
+            <h2>📋 Как играть:</h2>
+            <ul>
+                <li><strong>Клик ЛКМ</strong> по ящику → поместить товар</li>
+                <li><strong>Цифры 1-5</strong> на клавиатуре → сдать полный ящик</li>
+                <li><i>На 2 уровне:</i> <strong>клик ПКМ</strong> по коробке чтобы открыть ее</li>
+                <li><i>На 3 уровне:</i> <strong>наводите мышь</strong> на предметы для определения "экспресс" товаров, которые складываются отдельно</li>
+            </ul>
+        </div>
+        
+        <!-- Для проверки уровней -->
+        <div id="test-buttons" class="test-buttons">
+            <p>Для проверки:</p>
+            <button type="button" class="btn btn-test" id="test-level-1">Тест: Уровень 1</button>
+            <button type="button" class="btn btn-test" id="test-level-2">Тест: Уровень 2</button>
+            <button type="button" class="btn btn-test" id="test-level-3">Тест: Уровень 3</button>
+        </div>
+    </div>
+
+    <!-- Подключаем JS файлы -->
+    <script src="js/storage.js"></script>
+    <script src="js/game-data.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

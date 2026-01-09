@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основной flex-элемент */
+.toy-flexbox {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: white;
+    transition: filter 1s ease-in;
+}
+
+/* Общие стили для всех картинок */
+.toy {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Toy 1 - всегда видимый (400x400) */
+.toy1 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/toy1.jpg');
+    background-size: cover;
+    z-index: 1;
+}
+
+/* Toy 2 - появляется при наведении (179x277) */
+.toy2 {
+    width: 90px; /* Масштабируем под 200px контейнер */
+    height: 139px;
+    background-image: url('../img/toy2.png');
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: transform 1s ease-out;
+}
+
+/* Toy 3 - появляется при клике (179x277) */
+.toy3 {
+    width: 90px;
+    height: 139px;
+    background-image: url('../img/toy3.png');
+    z-index: 3;
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+/* Toy 4 - появляется при клике (92x116) */
+.toy4 {
+    width: 46px;
+    height: 58px;
+    background-image: url('../img/toy4.png');
+    z-index: 4;
+    opacity: 0;
+    transform: translate(30px, 0px);
+}
+
+/* Toy 5 - появляется при клике и вращается (132x140) */
+.toy5 {
+    width: 66px;
+    height: 70px;
+    background-image: url('../img/toy5.png');
+    z-index: 5;
+    opacity: 0;
+    transform: translate(20px, -30px);
+}
+
+/* Стили для текстовых надписей */
+.toys-wholesale {
+    opacity: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: lightgray;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    z-index: 5;
+}
+
+.fun-toys {
+    opacity: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: greenyellow;
+    font-size: 14px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    z-index: 5;
+    transform: rotate(-30deg);
+}
+
+/* Состояние при наведении */
+.toy-flexbox:hover .toy2 {
+    opacity: 1;
+    transform: translateX(60px);
+}
+
+.toy-flexbox:hover .toys-wholesale {
+    opacity: 1;
+}
+
+/* Анимации */
+@keyframes rotate {
+    from {
+        transform: translate(20px, -30px) rotate(0deg);
+    }
+    to {
+        transform: translate(20px, -30px) rotate(-360deg);
+    }
+}
+/* Состояние при нажатии */
+.toy-flexbox:active {
+    filter: sepia(1);
+}
+
+.toy-flexbox:active .toy2 {
+    opacity: 0;
+}
+
+.toy-flexbox:active .toy3 {
+    opacity: 1;
+}
+
+.toy-flexbox:active .toy4 {
+    opacity: 1;
+}
+
+.toy-flexbox:active .toy5 {
+    opacity: 1;
+    animation: rotate 0.5s linear infinite;
+}
+
+.toy-flexbox:active .toys-wholesale {
+    opacity: 0;
+}
+
+.toy-flexbox:active .fun-toys {
+    opacity: 1;
+}

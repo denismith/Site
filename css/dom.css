@@ -1,0 +1,100 @@
+/* Контент с таблицей */
+.content {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    background: #ff7a33;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(26, 35, 126, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #ff7a33;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 6px 12px rgba(69, 90, 100, 0.3);
+}
+
+/* Таблица */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+#phrasesTable {
+    width: 100%;
+    table-layout: fixed;
+    /*border-collapse: collapse;*/
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+#phrasesTable thead {
+    background: #ff7a33;
+    color: white;
+}
+
+#phrasesTable th {
+    padding: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#phrasesTable tbody tr {
+    border: solid 2px black;
+}
+
+#phrasesTable td {
+    padding: 14px 16px;
+    vertical-align: top;
+}
+
+/* Классы для чередования фона */
+.class1 {
+    
+    background-color: lightyellow;
+}
+
+.class2 {
+    background-color: lightcyan;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

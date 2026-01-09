@@ -1,0 +1,168 @@
+.laptop {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+/* Монитор */
+.monitor {
+    position: absolute;
+    width: 140px;
+    height: 75px;
+    top: 10px;
+    left: 28px;
+    background: linear-gradient(
+        90deg, 
+        #edf5f8 0%,
+        #9bbafd 100%
+    );
+    border: 5px solid #ababaa;
+}
+
+/* Основание */
+.base {
+    position: absolute;
+    width: 140px;
+    height: 60px;
+    top: 87px;
+    left: 17px;
+    background: #ababaa;
+    transform: skewX(-20deg);
+}
+
+/* Объем под основанием справа */
+.base:after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 112%;
+    top: 0px;
+    left: 140px;
+    transform: skewX(20deg) rotate(20deg);
+    background: #263238;
+}
+
+/* Объем под основанием */
+.volume {
+    position: absolute;
+    width: 144px;
+    height: 7px;
+    top: 147px;
+    left: 7px;
+    background: #323230;
+}
+
+/* Слайдеры */
+.slider {
+    position: absolute;
+    top: 95px;
+    transform: skewX(-20deg);
+    width: 20px;
+    height: 30px;
+    background: linear-gradient(
+        to top,
+        #f4f1df 0%,
+        #717173 100%
+    );
+}
+
+.slider.s1 {
+    left: 30px;
+}
+
+.slider.s2 {
+    left: 80px;
+}
+
+.slider.s3 {
+    left: 130px;
+}
+
+/* Пробел */
+.spacebar {
+    position: absolute;
+    width: 130px;
+    height: 7px;
+    top: 135px;
+    left: 15px;
+    background: #81827d;
+    transform: skewX(-20deg);
+}
+
+/* Ноутбук на экране */
+/* Вложенный монитор */
+.nested-monitor {
+    position: absolute;
+    width: 47px;
+    height: 25px;
+    top: 3px;
+    left: 40px;
+    background: linear-gradient(
+        90deg, 
+        #edf5f8 0%,
+        #9bbafd 100%
+    );
+    border: 2px solid #ababaa;
+}
+
+/* Вложенное основание */
+.nested-base {
+    position: absolute;
+    width: 47px;
+    height: 16px;
+    top: 30px;
+    left: 37px;
+    background: #ababaa;
+    transform: skewX(-20deg);
+}
+
+/* Вложенный объем под основанием справа */
+.nested-base:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 115%;
+    top: 0px;
+    left: 47px;
+    transform: skewX(20deg) rotate(20deg);
+    background: #263238;
+}
+
+/* Вложенный объем под основанием */
+.nested-volume {
+    position: absolute;
+    width: 49px;
+    height: 3px;
+    top: 46px;
+    left: 34px;
+    background: #323230;
+}
+
+/* Вложенные слайдеры */
+.nested-slider {
+    position: absolute;
+    width: 4px;
+    height: 7px;
+    top: 32px;
+    transform: skewX(-20deg);
+    background: linear-gradient(
+        to top,
+        #f4f1df 0%,
+        #717173 100%
+    );
+}
+
+.nested-slider.s1 { left: 42px; }
+.nested-slider.s2 { left: 60px; }
+.nested-slider.s3 { left: 78px; }
+
+/* Вложенный пробел */
+.nested-spacebar {
+    position: absolute;
+    width: 42px;
+    height: 3px;
+    top: 42px;
+    left: 38px;
+    background: #81827d;
+    transform: skewX(-20deg);
+}

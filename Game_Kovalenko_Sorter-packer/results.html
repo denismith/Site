@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 Сортировщик-упаковщик - Результаты</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/results.css">
+</head>
+<body>
+    <div class="results-container">
+        <div class="result-icon" id="result-icon">🎯</div>
+        <h1 class="result-title" id="result-title">Результаты смены</h1>
+        
+        <div class="score-display" id="final-score">0</div>
+        
+        <div class="result-message" id="result-message">
+            Обработка результатов...
+        </div>
+        
+        <div class="details" id="details">
+            <!-- Детали будут добавлены через JS -->
+        </div>
+        
+        <div class="buttons">
+            <button class="btn" id="continue-game">➡️ Продолжить</button>
+            <button class="btn btn-secondary" id="new-game">🔄 Новая игра</button>
+            <button class="btn btn-secondary" id="change-name">👤 Сменить имя</button>
+            <button class="btn" id="view-records">🏆 Таблица рекордов</button>
+        </div>
+        
+        <table class="records-table hidden" id="records-table">
+            <thead>
+                <tr>
+                    <th>Игрок</th>
+                    <th>Компания</th>
+                    <th>Рекорд</th>
+                </tr>
+            </thead>
+            <tbody id="records-body">
+                <!-- Записи будут добавлены через JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/game-data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

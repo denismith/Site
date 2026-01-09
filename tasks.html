@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Задания — Уралвагонзавод</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pic.css">
+  <link rel="stylesheet" href="css/uvzlogo.css">
+  <link rel="stylesheet" href="css/flexbox.css">
+  <link rel="stylesheet" href="css/dom.css">
+  <link rel="stylesheet" href="css/house.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo_img">
+          <div class="uvz-logo">
+            <div class="v1"></div>
+            <div class="v2"></div>
+            <div class="v3"></div>
+            <div class="v4"></div>
+            <div class="v5"></div>
+            <div class="v6"></div>
+
+            <div class="u1"></div>
+            <div class="u2"></div>
+            <div class="u3"></div>
+            <div class="u4"></div>
+
+            <div class="z1"></div>
+            <div class="z2"></div>
+            <div class="z3"></div>
+            <div class="z4"></div>
+
+            <div class="f1"></div>
+            <div class="f2"></div>
+            <div class="f3"></div>
+            <div class="f4"></div>
+          </div>
+        </div>
+        <div class="name">УралВагонЗавод</div>
+      </div>
+      <nav class="main-nav" role="navigation" aria-label="Главное меню">
+        <a href="index.html" class="nav-link">О КОМПАНИИ</a>
+        <a href="products.html" class="nav-link">ПРОДУКЦИЯ</a>
+        <a href="history.html" class="nav-link">ИСТОРИЯ</a>
+        <a href="persons.html" class="nav-link">РУКОВОДСТВО</a>
+        <a href="tasks.html" class="nav-link">ЗАДАНИЯ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="page-header">
+      <!-- Задания -->
+      <h1>Задания</h1>
+      <div class="tasks-gallery">
+        <!-- Задание 2 -->
+        <div class="task">
+          <h2>Задание 2</h2>
+          <h3>Рисунок CSS - вариант 5</h3>
+          <div class="laptop">
+            <div class="monitor">
+                  <!-- ноутбук на экране -->
+                  <div class="nested-monitor"></div>
+                  <div class="nested-base"></div>
+                  <div class="nested-volume"></div>
+                  <div class="nested-slider s1"></div>
+                  <div class="nested-slider s2"></div>
+                  <div class="nested-slider s3"></div>
+                  <div class="nested-spacebar"></div>
+              </div>
+              <div class="base"></div>
+              <div class="volume"></div>
+              <div class="slider s1"></div>
+              <div class="slider s2"></div>
+              <div class="slider s3"></div>
+              <div class="spacebar"></div>
+              <div class="volume"></div>
+          </div>
+          </div>
+
+        <!-- Задание 3 -->
+        <div class="task">
+          <h2>Задание 3</h2>
+          <h3>Flexbox - вариант 3</h3>
+          <div class="toy-flexbox">
+            <div class="toy toy1"></div>
+            <div class="toy toy2"></div>
+            <div class="toy toy3"></div>
+            <div class="toy toy4"></div>
+            <div class="toy toy5"></div>
+            <div class="toys-wholesale">Игрушки оптом</div>
+            <div class="fun-toys">Самые веселые игрушки!</div>
+          </div>
+        </div>
+
+        <!-- Задание 4 -->
+        <div class="task">
+          <h2>Задание 4</h2>
+          <h3>DOM - вариант 1</h3>
+          <section class="content">
+            <div class="controls">
+                <button id="addPhraseBtn" class="btn">Добавить фразу</button>
+                <button id="recolorBtn" class="btn btn-secondary">Перекрасить</button>
+            </div>
+            <!-- Контейнер для прокрутки -->
+            <div class="table-container">
+              <!-- Сама таблица -->
+              <table id="phrasesTable">
+                <!-- Заголовок таблицы -->
+                <thead>
+                  <!-- Строка заголовка -->
+                  <tr>
+                    <!-- Ячейка заголовка -->
+                    <th>Латинский язык</th>
+                    <!-- Ячейка заголовка -->
+                    <th>Русский язык</th>
+                  </tr>
+                </thead>
+                <!-- Тело таблицы (данные) -->
+                <tbody id="tableBody">
+                <!-- Строки tr (Class1/Class2) и ячейки td будут добавляться сюда -->
+                </tbody>
+              </table>
+            </div>
+        </section>
+        </div>
+
+        <!-- Задание 5 -->
+        <div class="task">
+          <h2>Задание 5</h2>
+          <h3>Перетаскивание объектов - вариант 1</h3>
+          <div class ="puzzle-container">
+            <div class="puzzle-controls">
+              <button id="resetPuzzleBtn" class="btn">Сброс</button>
+              <button id="checkPuzzleBtn" class="btn btn-secondary">Проверить</button>
+            </div>
+            <!-- Инструкция -->
+            <div class="instructions">
+                <p>• Перетаскивайте части домика левой кнопкой мыши</p>
+                <p>• Клик правой кнопкой мыши - поворот на 45°</p>
+            </div>
+            
+            <!-- Здесь будут лежать части домика -->
+            <div class="puzzle-area">
+                <!-- 6 частей домика добавятся через JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Курсовая -->
+        <div class="task">
+          <h2>Курсовая работа</h2>
+          <h3>Разработка игрового приложения "Признаки предметов"</h3>
+          <a href="site/Game_Kovalenko_Sorter-packer/index.html" class="nav-link">Перейти</a>
+        </div>
+      </div>       
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Уралвагонзавод © 2025</p>
+      <nav class="footer-nav" aria-label="Футер-меню">
+        <a href="index.html">О компании</a> |
+        <a href="products.html">Продукция</a> |
+        <a href="history.html">История</a> |
+        <a href="persons.html">Руководство</a> |
+        <a href="tasks.html">Задания</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+<script src="js/dom.js"></script>
+<script src="js/house.js"></script>
+</html>

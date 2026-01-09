@@ -1,0 +1,293 @@
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка с информацией */
+.game-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.player-info {
+    font-size: 1.2em;
+}
+
+.score-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.timer {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Основное игровое поле */
+.game-container {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Левая часть - конвейер */
+.conveyor-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.conveyor {
+    position: relative;
+    width: 250px;
+    height: 700px;
+    background: #f0f0f0;
+    border-left: 15px solid var(--color-conveyor);
+    border-right: 15px solid var(--color-conveyor);
+    border-radius: 10px;    
+    overflow: hidden;
+}
+
+.conveyor-belt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        00deg,
+        #eee,
+        #eee 20px,
+        #ccc 20px,
+        #ccc 40px
+    );
+}
+
+.conveyor-item {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.conveyor-item:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+.item-emoji {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.item-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Правая часть - ящики */
+.boxes-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.boxes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    flex: 1;
+}
+
+.box {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 3px solid var(--color-primary);
+    position: relative;
+}
+
+.box-full {
+    border-color: var(--color-secondary);
+    background: rgba(76, 175, 80, 0.1);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.box-key {
+    background: var(--color-secondary);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.box-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 60px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.box-item {
+    font-size: 2em;
+    transition: transform 0.2s;
+}
+
+.box-item:hover {
+    transform: scale(1.2);
+}
+
+.box-progress {
+    height: 10px;
+    width: 100%;
+    background: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.box-progress-fill {
+    height: 100%;
+    background: var(--color-secondary);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Кнопка досрочной остановки смены */
+.shift-end {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FF5722;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255,87,34,0.3);
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.shift-end:hover {
+    background: #F44336;
+    transform: scale(1.05);
+}
+
+/* Индикатор экспресс-товара */
+.express-indicator {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #FF5722;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Подсказки */
+.hints {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.hints h3 {
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+/* Адаптивность */
+@media (max-width: 1100px) {
+    .game-container {
+        flex-direction: column;
+    }
+    
+    .conveyor-section {
+        order: 2;
+    }
+    
+    .boxes-section {
+        order: 1;
+    }
+    
+    .conveyor {
+        height: 300px;
+        width: 200px;
+    }
+}
